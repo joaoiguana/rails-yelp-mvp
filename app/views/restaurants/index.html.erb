@@ -1,0 +1,9 @@
+<h1>Restaurants</h1>
+<ul class="list-unstyled">
+  <% @restaurants.each do |restaurant| %>
+  <div class="d-sm-flex py-16 ps-4 ps-10 pe-sm-10" style="text-align:center; display:inline-block;">
+    <%# <%= image_tag('noun-restaurant-3846100.png', draggable: "true", id: "drag1") %>
+    <li><%= link_to restaurant.name, restaurant_path(restaurant), :class=>"card-text text-decoration-none" %></li>
+  </div>
+  <% end %>
+</ul>
