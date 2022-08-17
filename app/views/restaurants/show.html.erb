@@ -10,3 +10,19 @@
 <% end %>
 
 <%= link_to "Add a review", new_restaurant_review_path(@restaurant.id), :type=>"button", :class=>"btn btn-outline-success" %>
+
+<div class="card" style="width: 18rem;">
+  <%# <img class="card-img-top" src="..." alt="Card image cap"> %>
+  <div class="card-body">
+    <h2><%= @restaurant.name %></h2>
+    <p><%= @restaurant.address %></p>
+  </div>
+  <ul class="list-group list-group-flush">
+    <h5>Reviews</h5>
+    <h6><%= @restaurant.category.capitalize %></h6>
+    <% reviews.each do |review| %>
+    <p><%= review.content %></p>
+    <p>Rating: <%= review.rating %> stars.</p>
+    <% end %>
+  </ul>
+</div>
